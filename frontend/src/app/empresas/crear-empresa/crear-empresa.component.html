@@ -1,0 +1,33 @@
+<!-- <app-nav></app-nav> -->
+
+<div class="cuerpo">
+    <h2>
+        Añadir empresa
+    </h2>
+    <div class="caja">
+<form [formGroup]="formEmpresa" (ngSubmit)="crearEmpresa()">
+   
+    <div>
+        <label for="nombreEmpresa">Nombre Empresa</label>
+        <input type="text" id="nombreEmpresa" formControlName="nombreEmpresa">
+    </div>
+    <!-- <div>
+        <label for="idDireccion">Id Direccion</label>
+        <input type="number" id="idDireccion" formControlName="idDireccion"> 
+        <button type="submit">Selecciona </button>
+    </div> -->
+    <div>
+    <label for="idDireccion">Seleccione la direccion</label>
+    <select id="idDireccion" formControlName="idDireccion">
+            <option *ngFor="let direccion of direcciones" [value]="direccion.idDireccion">{{direccion.direccion}}</option>
+       
+    </select> 
+</div>
+    <div class ="botones">
+        
+        <button class="limpiar"  (click)= "limpiarCampos()">Limpiar</button>
+        <button  class="submit" type="submit">Guardar</button>
+    </div>
+</form>
+</div>
+</div>

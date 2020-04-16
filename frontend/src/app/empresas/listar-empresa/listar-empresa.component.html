@@ -1,0 +1,35 @@
+
+<!-- <app-nav></app-nav> -->
+<div class="cuerpo">
+    <h2>
+       Empresas
+    </h2>
+    <div class="etiquetas">
+      <button class="plus" routerLink="crear-empresa">Añadir empresa</button> 
+    </div> 
+    <div class="caja">
+<table>
+    <tr>
+        <!-- <th>ID EMPRESA</th> -->
+        <th>Nombre de empresa</th>
+        <th>Dirección</th>
+          <th></th>
+        
+    </tr>
+    <tr *ngFor="let empresa of empresas">
+        <!-- <td>{{empresa.idEmpresa}}</td> -->
+         <td>{{empresa.nombreEmpresa}}</td>
+         <td >{{empresa.nombreDireccion}}</td>
+         <!-- <td>{{empresa.idDireccion}}</td> -->
+         <td>
+             <button  class="edit" routerLink="editar-empresa/{{empresa.idEmpresa}}">
+                 <img src="../../../assets/edit-2.svg">
+             </button>
+             <button  class="reset" (click)="borrarEmpresa(empresa)">
+                 <img src="../../../assets/trash.svg">
+             </button>
+         </td>
+    </tr>
+</table>
+</div>
+</div>

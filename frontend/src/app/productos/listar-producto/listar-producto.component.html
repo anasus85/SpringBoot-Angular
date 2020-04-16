@@ -1,0 +1,34 @@
+<!-- <app-nav></app-nav> -->
+<div class="cuerpo">
+    <h2>
+        Productos
+    </h2>
+<div class="etiquetas">
+      <button class="plus" routerLink="crear-producto">Añadir producto</button> 
+    </div>      
+<div class="caja">
+<table>
+    <tr>
+        <th>Código de cliente</th>
+        <th>EAN </th>
+        <th>Proveedor</th>
+          <th></th>
+        
+    </tr>
+    <tr *ngFor="let producto of productos">
+         <td>{{producto.codigoCliente}}</td>
+         <td>{{producto.ean}}</td>
+         <td>{{producto.idEmpresa}}</td>
+         <!-- <td>{{empresa.idDireccion}}</td> -->
+         <td>
+             <button class="edit" routerLink="/editar-producto/{{producto._idProducto}}">
+                 <img src="../../../assets/edit-2.svg">
+             </button>
+             <button  class="reset" (click)="borrarProducto(producto._idProducto)">
+                 <img src="assets/trash.svg">
+             </button>
+         </td>
+    </tr>
+</table>
+</div>
+</div>

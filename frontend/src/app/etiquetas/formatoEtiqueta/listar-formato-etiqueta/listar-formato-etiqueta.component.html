@@ -1,0 +1,43 @@
+<!-- <app-nav></app-nav> -->
+<div class="cuerpo">
+    <h2>
+       Formatos de etiqueta
+    </h2>
+    <div class="etiquetas">
+
+      <button class="plus" routerLink="crear-formato-etiqueta">Añadir formato</button> 
+    </div>
+<div class="caja">
+<table>
+    <tr>
+        <th>Nombre de formato</th>
+        <th>Cod. Cliente</th>
+        <th>Cod. Cliente Ext</th>
+        <th>Cod.Barras</th>
+        <th>EAN</th>
+        <th>Dicc 1</th>
+        <th>Dicc 2</th>
+         <th></th>
+        
+    </tr>
+    <tr *ngFor="let formatoEtiqueta of formatosEtiqueta">
+         <td>{{formatoEtiqueta.nombreEtiqueta}}</td>
+         <td>{{formatoEtiqueta.codigoCliente}}</td>
+         <td>{{formatoEtiqueta.codigoClienteExt}}</td>
+         <td>{{formatoEtiqueta.codigoBarras}}</td>
+         <td>{{formatoEtiqueta.Ean}}</td>
+         <td>{{formatoEtiqueta.Direccion1}}</td>
+         <td>{{formatoEtiqueta.Direccion2}}</td>
+         <!-- <td>{{empresa.idDireccion}}</td> -->
+         <td>
+             <button class="edit" routerLink="editar-formato-etiqueta/{{formatoEtiqueta._idFormato}}">
+                 <img src="../../../assets/edit-2.svg">
+             </button>
+             <button   class="reset" (click)="borrarFormatoEtiqueta(formatoEtiqueta._idFormato)">
+                 <img src="assets/trash.svg">
+             </button>
+         </td>
+    </tr>
+</table>
+</div>
+</div>

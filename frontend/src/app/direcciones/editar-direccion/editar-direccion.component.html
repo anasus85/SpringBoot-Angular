@@ -1,0 +1,30 @@
+<!-- <app-nav></app-nav> -->
+
+<div class="cuerpo">
+    <h2>
+        Editar dirección
+    </h2>
+    <div class="caja">
+<form [formGroup]="formDireccion" (ngSubmit)="modificarDireccion()">
+    
+ 
+    <div>
+        <label for="direccion">Direccion</label>
+        <input type="text" id="direccion" formControlName="direccion"  value="{{direccion.direccion}}">
+    </div>
+    <div>
+        <label for="codigoPostal">Código Postal</label>
+        <input type="text" id="codigoPostal" formControlName="codigoPostal"  value="{{direccion.codigoPostal}}">
+    </div>
+    <div>
+        <label for="destino">destino</label>
+        <input type="text" id="destino" formControlName="destino"  value="{{direccion.destino}}">
+    </div>
+    <div class="botones">
+        
+        <button   class="limpiar" (click)= "limpiarCampos(direccion)">Limpiar</button>
+        <button  class="submit" type="submit">Guardar</button>
+    </div>
+</form>
+</div>
+</div>

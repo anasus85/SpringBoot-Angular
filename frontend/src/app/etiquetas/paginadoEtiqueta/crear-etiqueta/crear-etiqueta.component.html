@@ -1,0 +1,29 @@
+<!-- <app-nav></app-nav> -->
+
+<div class="cuerpo">
+    <h2>
+       Añadir nueva página de etiquetas
+    </h2>
+    <div class="caja">
+
+    
+<form [formGroup]="formEtiqueta" (ngSubmit)="guardarEtiqueta()">
+    <div>
+        <label for="idFormato">Formato de etiqueta</label>
+        <input type="number" id="idFormato" formControlName="idFormato">
+    </div>
+    <div class="doble">
+        <label class="doble" for="filas">Filas</label>
+        <input class="doble"  type="number" id="filas" formControlName="filas">
+  
+        <label class="doble" for="columnas">Columnas</label>
+        <input class="doble" type="number" id="columnas" formControlName="columnas">
+    </div>
+    <div class="botones">
+        <button class="limpiar"(click)= "limpiarCampos()"> Limpiar</button>
+        <button class="submit" type="submit">Guardar</button>
+       
+    </div>
+</form>
+</div>
+</div>

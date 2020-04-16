@@ -1,0 +1,38 @@
+<!-- <app-nav></app-nav> -->
+<div class="cuerpo">
+    <h2>
+        Direcciones
+    </h2>
+
+      <div class="etiquetas">
+
+     <button class="plus" routerLink="crear-direccion">Añadir direccion</button> 
+    </div>
+       
+<div class="caja">
+<table>
+    <tr>
+        <th>Dirección</th>
+        <th>Código postal</th>
+        <th>Destino</th>
+          <th></th>
+        
+    </tr>
+    <tr *ngFor="let direccion of direcciones">
+         <td>{{direccion.direccion}}</td>
+         <td>{{direccion.codigoPostal}}</td>
+         <td>{{direccion.destino}}</td>
+         <!-- <td>{{empresa.idDireccion}}</td> -->
+         <td>
+             <button  class="edit" routerLink="editar-direccion/{{direccion.idDireccion}}">
+                 <img src="../../../assets/edit-2.svg">
+             </button>
+             <button  class="reset" (click)="borrarDireccion(direccion)">
+                 <img src="../../../assets/trash.svg">
+             </button>
+         </td>
+    </tr>
+</table>
+</div>
+
+</div>

@@ -1,0 +1,32 @@
+<!-- <app-nav></app-nav> -->
+
+<div class="cuerpo">
+    <h2>
+        Añadir producto
+    </h2>
+<div class="caja">
+<form [formGroup]="formProducto" (ngSubmit)="guardarProducto()">
+    <div>
+        <label for="codigoCliente">Código de producto</label>
+        <input type="text" id="codigoCliente" formControlName="codigoCliente">
+    </div>
+    <div>
+        <label for="ean">Código de Barras (ean)</label>
+        <input type="text" id="ean" formControlName="ean">
+    </div>
+    
+    <div>
+        <label for="idEmpresa">Seleccione la empresa proveedora</label>
+        <select id="idEmpresa" formControlName="idEmpresa">
+                <option *ngFor="let empresa of empresas" [value]="empresa.idEmpresa">{{empresa.nombreEmpresa}}</option>
+           
+        </select> 
+    </div>
+    <div class="botones">
+        <button class="limpiar" (click)= "limpiarCampos()"> Limpiar</button>
+        <button  class="submit" type="submit">Guardar</button>
+        
+    </div>
+</form>
+</div>
+</div>

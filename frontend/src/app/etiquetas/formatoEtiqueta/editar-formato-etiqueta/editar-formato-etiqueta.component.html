@@ -1,0 +1,46 @@
+<!-- <app-nav></app-nav> -->
+
+<div class="cuerpo">
+    <h2>
+        Editar formato de etiqueta
+    </h2>
+    <div class="caja">
+
+<form [formGroup]="formFormatoEtiqueta" (ngSubmit)="modificarFormatoEtiqueta()">
+    <div>
+        <label for="idFormato">Id formato</label>
+        <input type="text" id="idFormato" formControlName="idFormato" readonly>
+    </div>
+    <div>
+        <label for="nombreFormato">Nombre de formato</label>
+        <input type="text" id="nombreFormato" formControlName="nombreFormato">
+    </div>
+    <div class="doble">
+        <label for="codCliente">Código de cliente</label>
+        <input type="checkbox" id="codCliente" value="Si" formControlName="codCliente">
+   
+        <label for="codClienteExtendido">Cod. Cliente Extendido</label>
+        <input type="checkbox" id="codClienteExtendido" value="Si" formControlName="codClienteExtendido">
+    </div>
+    <div class="doble">
+        <label for="codBarras">Código de barras</label>
+        <input type="checkbox" id="codBarras" value="Si" formControlName="codBarras">
+  
+        <label for="ean">EAN</label>
+        <input type="checkbox" id="ean" value="Si" formControlName="ean">
+    </div>
+    <div class="doble">
+        <label for="direccion1">Dirección1</label>
+        <input type="checkbox" id="direccion1" value="Si" formControlName="direccion1">
+   
+        <label for="direccion2">Dirección2</label>
+        <input type="checkbox" id="direccion2" value="Si" formControlName="direccion2">
+    </div>
+    
+     <div class="botones">
+        <button class="limpiar" type="submit">Guardar</button>
+        <button  class="reset"(click)= "limpiarCampos()"> Limpiar</button>
+    </div>
+</form>
+</div>
+</div>

@@ -1,0 +1,133 @@
+<!-- <app-nav></app-nav> -->
+
+<div class="cuerpo">
+    <h2>
+       Generar etiqueta
+    </h2>
+    <div class="etiquetas">
+    <div class="etiqueta1"  *ngIf="onEP" >
+        
+        <label  class="etiqueta" for="etiquetaProducto" >Producto</label>
+        <input class="etiqueta" type="radio" id="etiquetaProducto" value="formatoEtiqueta" (click)="openProducto()">
+    </div>
+       <div   class="etiqueta2" *ngIf="onEE">
+        <label  class="etiqueta" for="etiquetaEnvio">Envío</label>
+        <input   class="etiqueta"type="radio" id="etiquetaEnvio" value="etiquetaEnvio" (click)="openEnvio()">
+    </div>
+</div>
+    
+   <div  class = "caja" *ngIf="onProducto" > 
+
+    <form [formGroup]="formEtiquetaProducto" (ngSubmit)="generarEtiqueta()">
+    <label for="idEtiqueta">Seleccione el formato de etiqueta</label>
+    <select id="idEtiqueta"  formControlName="idEtiqueta" >
+        <option *ngFor="let etiqueta of etiquetas" [value]="etiqueta.idEtiqueta">{{etiqueta.idFormato}}, {{etiqueta.filas}}x{{etiqueta.columnas}}</option>
+<!--    
+        <option  [value]="1" >formato1</option> 
+        <option  [value]="2">formato2</option>  -->
+             
+     </select> 
+     <!-- con boton -->
+     <!-- <button class="plus" (click)="openFormato()"> Aceptar</button>
+
+     <div *ngIf="onFormato" > 
+        <label for="idProducto">Seleccione el producto</label>
+        <select id="idProducto"  formControlName="idProducto" >
+       
+           
+            <option  [value]="1">Producto1</option> 
+            <option  [value]="2">Producto2</option> 
+                 
+         </select> 
+  -->
+   <!-- <div> -->
+
+    <!-- sin boton -->
+  
+
+    <div > 
+       <label for="idProducto">Seleccione el producto</label>
+       <select id="idProducto"  formControlName="idProducto" >
+      
+          
+           <option  [value]="1">Producto1</option> 
+           <option  [value]="2">Producto2</option> 
+                
+        </select> 
+
+  <div class="botones">
+    <button  class="limpiar" (click)= "cerrarProducto()"> Volver</button>
+   <button  class="submit"(click)="cerrarProducto()" > Generar</button>
+   
+</div>
+</div> 
+</form>
+</div> 
+
+<div  class = "caja" *ngIf="onEnvio">
+<form [formGroup]="formEtiquetaEnvio" (ngSubmit)="generarEtiquetaEnvio()">
+    <div class= "info">
+        <p>Datos de envío:</p>
+    </div>
+    <div>
+    <label for="idEmpresaMensajes">Seleccione empresa mensajera</label>
+    <select id="idEmpresaMensajes"  formControlName="idEmpresaMensajes" >
+        <option *ngFor="let empresa of empresas" [value]="empresa.idEmpresa">{{empresa.nombreEmpresa}}</option>
+               
+     </select> 
+    </div>
+
+    <div>
+        <label for="idEmpresaEmisora">Seleccione empresa emisora</label>
+        <select id="idEmpresaEmisora"  formControlName="idEmpresaEmisora" >
+            <option *ngFor="let empresa of empresas" [value]="empresa.idEmpresa">{{empresa.nombreEmpresa}}</option>
+                   
+         </select> 
+        </div>
+
+        <div>
+            <label for="idEmpresaReceptora">Seleccione empresa receptora</label>
+            <select id="idEmpresaReceptora"  formControlName="idEmpresaReceptora" >
+                <option *ngFor="let empresa of empresas" [value]="empresa.idEmpresa">{{empresa.nombreEmpresa}}</option>
+                       
+             </select> 
+            </div>
+            <div>
+                <label for="expedicion">Código de envío</label>
+                <input type="text" id="expedicion" formControlName="expedicion">
+            </div>   
+            <div>
+                <label for="referencia">Destino</label>
+                <input type="text" id="referencia" formControlName="referencia">
+            </div>  
+            <div  class="doble">
+                <label  class= "doble" for="kilos">Kilos</label>
+                <input  class ="doble" type="number" id="kilos" formControlName="kilos">
+           
+                <label class= "doble"for="bultos">Bultos</label>
+                <input class= "doble" type="number" id="bultos" formControlName="bultos">
+            
+            <label for="reembolso">Reembolso</label>
+            <input   type="checkbox" id="reembolso" value="true">
+            </div>
+            <div class= "info">
+                <p>Formato de página de etiqueta: </p>
+            </div>
+            <div class="doble" >
+                <label class= "doble" for="filas">Filas </label>
+                <input class= "doble" type="number" id="filas" formControlName="filas">
+            
+                <label class= "doble"for="columnas">Columnas </label>
+                <input  class= "doble"type="number" id="columnas" formControlName="columnas">
+            </div>
+     <div class="botones">
+        <button  class="limpiar" (click)= "cerrarEnvio()"> Volver</button>
+        <button  class="submit" (click)="cerrarEnvio()" > Generar</button>
+        
+     </div>
+</form> 
+
+</div>
+
+</div>
+
